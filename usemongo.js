@@ -30,7 +30,7 @@ stream.on('tweet', function (tweet) {
 });
 
     db.collection("tweet").find().toArray(function(err,items){
-        var s=items.created_at;
+        var s=items[0].created_at;
         console.dir(s);
     });
 

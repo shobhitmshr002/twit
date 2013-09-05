@@ -10,9 +10,16 @@ var Twit = require('twit');
 var mongo = require('mongoskin');
 var db          = mongo.connect('mongodb://localhost:27017/tweets');
 var tweetSchema = new db.Schema({
-    texto:    new Array(),
+    texto:    new Array()
 });
 var util = require('util');
+
+var T = new Twit({
+    consumer_key:         'm4h8SeqEe84r5jnuDIHEyw'
+    , consumer_secret:      'Ggrbgnx4RM58TcnZtnJtaM2aQBxmphtv9upN4qlVUfM'
+    , access_token:         '178622205-TaoqcUBwIFDY4NA0N28k08e4UcSTtwlzOPrfJk0'
+    , access_token_secret:  'V052uI3tDOLLmEvfvUp60jx0rtca9Cn76rr5EV3Xtw'
+}) ;
 
 Twitter.get('/statuses/user_timeline/5031024.json', {include_entities:true}, function(data) {
     var otro = new Array()
