@@ -26,6 +26,7 @@ var stream = T.stream('statuses/filter', { track: 'india' })
 stream.on('tweet', function (tweet) {
 
     db.collection("tweet").insert(tweet,function(){
+    console.log(tweet);
     })
 });
 
